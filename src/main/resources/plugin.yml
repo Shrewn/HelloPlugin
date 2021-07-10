@@ -1,0 +1,4 @@
+name: ${project.name}
+version: ${project.version}
+main: net.shrewn.helloplugin.HelloPlugin
+author: [roanasaur/Shrewn, CyberFlame]
