@@ -7,20 +7,20 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.block.BlockBreakEvent;
 
-public class BlockPlaceListener implements Listener
+public class BlockBreakListener implements Listener
 {
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent event)
+    public void onBlockBreak(BlockBreakEvent event)
     {
-        Block block = event.getBlockPlaced();
+        Block block = event.getBlock();
         Material blockMaterial = block.getType();
         World world = block.getWorld();
         Location location = block.getLocation();
         if (blockMaterial == Material.COBBLESTONE)
             {
-                world.playSound(location, Sound.SKELETON_IDLE, 1F, 1F);
+                world.playSound(location, Sound.SKELETON_DEATH, 1F, 1F);
             }
     }
 }
